@@ -556,3 +556,31 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* FIX: REMOVE LOADING SCREEN */
+
+(function () {
+    function hidePreloader() {
+        const preloader = document.getElementById("preloader");
+
+        if (preloader) {
+            preloader.style.transition = "opacity 0.4s ease";
+            preloader.style.opacity = "0";
+            preloader.style.pointerEvents = "none";
+
+            setTimeout(function () {
+                preloader.remove();
+            }, 400);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", hidePreloader);
+    } else {
+        hidePreloader();
+    }
+
+    window.addEventListener("load", hidePreloader);
+
+    // Safety fallback
+    setTimeout(hidePreloader, 3000);
+})();
