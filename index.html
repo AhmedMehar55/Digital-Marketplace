@@ -3,866 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Digital Marketplace - Buy and sell digital services, WhatsApp channels, promotions and products.">
-  <title>Digital Marketplace | Buy & Sell Online</title>
-
-  <!-- Google Font -->
+  <meta name="theme-color" content="#102b50">
+  <title>Digital Marketplace | Buy • Sell • Promote • Connect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- Main CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="marketplace.css">
 </head>
 
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner-border text-primary" role="status"></div>
-    <p>Loading Digital Marketplace...</p>
+  <div class="announcement">
+    <span>✦</span> Your digital world, all in one place.
+    <a href="#categories">Explore categories <i class="bi bi-arrow-up-right"></i></a>
   </div>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <span><i class="bi bi-shop"></i> Welcome to Digital Marketplace</span>
-      <span><i class="bi bi-geo-alt"></i> Pakistan | Currency: PKR</span>
-    </div>
-  </div>
+  <header class="header">
+    <a href="#" class="brand" id="homeLogo">
+      <span class="brand-mark"><i class="bi bi-cart3"></i></span>
+      <span>
+        <strong>DIGITAL <b>MARKETPLACE</b></strong>
+        <small>BUY · SELL · PROMOTE · CONNECT</small>
+      </span>
+    </a>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
-        <i class="bi bi-grid-1x2-fill text-primary"></i>
-        Digital Marketplace
-      </a>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#latest">Explore Ads</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar" aria-controls="mainNavbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <div class="header-actions">
+      <button class="login-btn" id="loginBtn">Log in</button>
+      <button class="primary-btn" id="sellBtn">
+        <i class="bi bi-plus-lg"></i> Post an Ad
       </button>
-
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#listings">Marketplace</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sellers">Sellers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
-        </ul>
-
-        <div class="d-flex gap-2 align-items-center">
-          <a href="#loginSection" class="btn btn-outline-primary btn-sm">Login</a>
-          <a href="#signupSection" class="btn btn-primary btn-sm">Join Now</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="home" class="hero-section">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <span class="hero-tag">YOUR ONLINE BUYING & SELLING PLATFORM</span>
-          <h1>Buy, Sell & Discover <span>Digital Services</span></h1>
-          <p>
-            Explore WhatsApp channels, digital services, promotions,
-            online products and trusted sellers in one marketplace.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#listings" class="btn btn-primary btn-lg">Explore Marketplace</a>
-            <a href="#signupSection" class="btn btn-outline-light btn-lg">Start Selling</a>
-          </div>
-
-          <div class="hero-points mt-4">
-            <span><i class="bi bi-check-circle-fill"></i> Free Seller Registration</span>
-            <span><i class="bi bi-check-circle-fill"></i> Multiple Categories</span>
-            <span><i class="bi bi-check-circle-fill"></i> Direct Deals</span>
-          </div>
-        </div>
-
-        <div class="col-lg-5">
-          <div class="hero-card">
-            <div class="hero-card-icon"><i class="bi bi-shop-window"></i></div>
-            <h3>Your Business, Your Marketplace</h3>
-            <p>Create your seller profile and showcase your services to potential buyers.</p>
-            <div class="hero-card-stats">
-              <div><strong>24/7</strong><small>Online Access</small></div>
-              <div><strong>PKR</strong><small>Local Currency</small></div>
-              <div><strong>Free</strong><small>To Join</small></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="bi bi-list"></i>
+      </button>
     </div>
   </header>
-  <!-- Search -->
-  <section class="search-section">
-    <div class="container">
-      <form id="marketplaceSearchForm" class="search-box">
-        <div class="search-input-wrap">
-          <i class="bi bi-search"></i>
-          <input type="search" id="mainSearch"
-            placeholder="Search services, channels, products or sellers...">
-        </div>
 
-        <select id="searchCategory" aria-label="Choose category">
-          <option value="all">All Categories</option>
-          <option value="whatsapp">WhatsApp Channels</option>
-          <option value="promotion">Promotion Services</option>
-          <option value="digital">Digital Services</option>
-          <option value="products">Digital Products</option>
-          <option value="general">General Products</option>
-        </select>
+  <main id="home">
 
-        <button type="submit" class="btn btn-primary" id="searchButton">
-          Search
-        </button>
-      </form>
-    </div>
-  </section>
+    <section class="hero">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="floating-bubble bubble-one"></div>
+      <div class="floating-bubble bubble-two"></div>
+      <div class="floating-bubble bubble-three"></div>
 
-  <!-- Statistics -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="row g-3 text-center">
-        <div class="col-6 col-md-3">
-          <div class="stat-card"><h3>Multiple</h3><p>Product Categories</p></div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card"><h3>Free</h3><p>Seller Registration</p></div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card"><h3>Online</h3><p>Seller Stores</p></div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-card"><h3>PKR</h3><p>Local Marketplace</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> YOUR DIGITAL WORLD, ALL IN ONE PLACE</div>
 
-  <!-- Categories -->
-  <section id="categories" class="section-padding">
-    <div class="container">
-      <div class="section-heading">
-        <span>EXPLORE</span>
-        <h2>Browse Categories</h2>
-        <p>Find the services and products you are looking for.</p>
-      </div>
+        <h1>Find it. <span>Sell it.</span><br>Grow digitally.</h1>
 
-      <div class="row g-3">
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="whatsapp">
-            <i class="bi bi-whatsapp"></i>
-            <h5>WhatsApp Channels</h5>
-            <p>Buy and sell channels</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="promotion">
-            <i class="bi bi-megaphone"></i>
-            <h5>Promotion Services</h5>
-            <p>Ads and promotions</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="digital">
-            <i class="bi bi-laptop"></i>
-            <h5>Digital Services</h5>
-            <p>Online services and skills</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="products">
-            <i class="bi bi-box-seam"></i>
-            <h5>Digital Products</h5>
-            <p>Digital items and resources</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="social">
-            <i class="bi bi-share"></i>
-            <h5>Social Media Assets</h5>
-            <p>Pages and online assets</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="general">
-            <i class="bi bi-bag"></i>
-            <h5>General Products</h5>
-            <p>Products when enabled</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="electronics">
-            <i class="bi bi-phone"></i>
-            <h5>Electronics</h5>
-            <p>Devices when enabled</p>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#listings" class="category-card" data-category-link="other">
-            <i class="bi bi-three-dots"></i>
-            <h5>Other Services</h5>
-            <p>More marketplace offers</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WhatsApp Marketplace -->
-  <section class="section-padding light-section" id="whatsappMarketplace">
-    <div class="container">
-      <div class="section-heading">
-        <span>FEATURED CATEGORY</span>
-        <h2><i class="bi bi-whatsapp text-success"></i> WhatsApp Marketplace</h2>
-        <p>Explore WhatsApp channels and related services.</p>
-      </div>
-
-      <div class="row g-3" id="whatsappListings">
-        <div class="col-6 col-lg-3 listing-column">
-          <div class="listing-card" data-category="whatsapp">
-            <div class="listing-image"><i class="bi bi-whatsapp"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">WhatsApp Channel</span>
-              <h5>Sample WhatsApp Channel</h5>
-              <p>Example listing for demonstration only.</p>
-              <div class="listing-price">PKR 2,000</div>
-              <button class="btn btn-outline-primary btn-sm w-100"
-                type="button" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-3 listing-column">
-          <div class="listing-card" data-category="whatsapp">
-            <div class="listing-image"><i class="bi bi-people"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">WhatsApp Service</span>
-              <h5>Channel Management</h5>
-              <p>Example service listing for demonstration.</p>
-              <div class="listing-price">PKR 1,500</div>
-              <button class="btn btn-outline-primary btn-sm w-100"
-                type="button" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-3 listing-column">
-          <div class="listing-card" data-category="whatsapp">
-            <div class="listing-image"><i class="bi bi-graph-up-arrow"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">WhatsApp Promotion</span>
-              <h5>Channel Promotion</h5>
-              <p>Example promotion listing for demonstration.</p>
-              <div class="listing-price">PKR 800</div>
-              <button class="btn btn-outline-primary btn-sm w-100"
-                type="button" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-3 listing-column">
-          <div class="listing-card" data-category="whatsapp">
-            <div class="listing-image"><i class="bi bi-patch-check"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">WhatsApp Service</span>
-              <h5>Channel Setup</h5>
-              <p>Example setup service for demonstration.</p>
-              <div class="listing-price">PKR 1,000</div>
-              <button class="btn btn-outline-primary btn-sm w-100"
-                type="button" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Promotion Services -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="section-heading">
-        <span>GROW YOUR BUSINESS</span>
-        <h2>Promotion Services</h2>
-        <p>Discover advertising and promotional services from sellers.</p>
-      </div>
-
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="service-card">
-            <i class="bi bi-megaphone"></i>
-            <h5>Social Media Promotion</h5>
-            <p>Find promotion services for your online business.</p>
-            <a href="#listings">Explore Services <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="service-card">
-            <i class="bi bi-youtube"></i>
-            <h5>YouTube Promotion</h5>
-            <p>Discover YouTube-related marketing services.</p>
-            <a href="#listings">Explore Services <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="service-card">
-            <i class="bi bi-whatsapp"></i>
-            <h5>WhatsApp Advertising</h5>
-            <p>Find WhatsApp channel and business promotion offers.</p>
-            <a href="#listings">Explore Services <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Latest Listings -->
-  <section id="listings" class="section-padding light-section">
-    <div class="container">
-      <div class="section-heading">
-        <span>MARKETPLACE</span>
-        <h2>Latest Listings</h2>
-        <p>Discover services and products listed by sellers.</p>
-      </div>
-
-      <div class="listing-toolbar">
-        <div>
-          <strong>Available Listings</strong>
-          <p>Sample content until live listings are connected.</p>
-        </div>
-
-        <select id="listingSort" class="form-select" aria-label="Sort listings">
-          <option value="default">Sort: Default</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="name">Name: A to Z</option>
-        </select>
-      </div>
-
-      <div class="row g-3" id="latestListings">
-        <div class="col-6 col-md-4 col-lg-3 listing-column">
-          <div class="listing-card" data-category="digital" data-price="2500" data-name="Graphic Design">
-            <div class="listing-image"><i class="bi bi-palette"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">Digital Service</span>
-              <h5>Graphic Design</h5>
-              <p>Sample graphic design service.</p>
-              <div class="listing-price">PKR 2,500</div>
-              <button class="btn btn-outline-primary btn-sm w-100" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 listing-column">
-          <div class="listing-card" data-category="promotion" data-price="1500" data-name="Social Media Ads">
-            <div class="listing-image"><i class="bi bi-bullseye"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">Promotion</span>
-              <h5>Social Media Ads</h5>
-              <p>Sample advertising service.</p>
-              <div class="listing-price">PKR 1,500</div>
-              <button class="btn btn-outline-primary btn-sm w-100" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 listing-column">
-          <div class="listing-card" data-category="products" data-price="1000" data-name="Digital Templates">
-            <div class="listing-image"><i class="bi bi-file-earmark-richtext"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">Digital Product</span>
-              <h5>Digital Templates</h5>
-              <p>Sample downloadable product.</p>
-              <div class="listing-price">PKR 1,000</div>
-              <button class="btn btn-outline-primary btn-sm w-100" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 listing-column">
-          <div class="listing-card" data-category="social" data-price="3000" data-name="Social Media Page">
-            <div class="listing-image"><i class="bi bi-person-video3"></i></div>
-            <div class="listing-body">
-              <span class="listing-category">Social Media Asset</span>
-              <h5>Social Media Page</h5>
-              <p>Sample social media asset listing.</p>
-              <div class="listing-price">PKR 3,000</div>
-              <button class="btn btn-outline-primary btn-sm w-100" disabled>Demo Listing</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p id="noSearchResults" class="text-center mt-4 d-none">
-        No matching demo listings found.
-      </p>
-    </div>
-  </section>
-
-  <!-- Featured Sellers -->
-  <section id="sellers" class="section-padding">
-    <div class="container">
-      <div class="section-heading">
-        <span>OUR COMMUNITY</span>
-        <h2>Featured Sellers</h2>
-        <p>Seller profiles will appear here after the database is connected.</p>
-      </div>
-
-      <div class="row g-3">
-        <div class="col-6 col-md-4">
-          <div class="seller-card">
-            <div class="seller-avatar"><i class="bi bi-person"></i></div>
-            <h5>Sample Seller</h5>
-            <p>Digital Services</p>
-            <span class="seller-status">Example Profile</span>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4">
-          <div class="seller-card">
-            <div class="seller-avatar"><i class="bi bi-person"></i></div>
-            <h5>Sample Business</h5>
-            <p>WhatsApp Promotions</p>
-            <span class="seller-status">Example Profile</span>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4">
-          <div class="seller-card">
-            <div class="seller-avatar"><i class="bi bi-person"></i></div>
-            <h5>Sample Store</h5>
-            <p>Digital Products</p>
-            <span class="seller-status">Example Profile</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Buyer Requests -->
-  <section class="section-padding light-section" id="buyerRequests">
-    <div class="container">
-      <div class="section-heading">
-        <span>BUYER COMMUNITY</span>
-        <h2>Buyer Requests</h2>
-        <p>Buyers will be able to post what they are looking for.</p>
-      </div>
-
-      <div class="request-card text-center">
-        <i class="bi bi-chat-square-text"></i>
-        <h4>Looking for Something?</h4>
-        <p>Register as a buyer and submit a request to find suitable sellers.</p>
-        <a href="#signupSection" class="btn btn-primary">Create Buyer Account</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works" class="section-padding">
-    <div class="container">
-      <div class="section-heading">
-        <span>SIMPLE PROCESS</span>
-        <h2>How It Works</h2>
-        <p>Start buying or selling in a few simple steps.</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <i class="bi bi-person-plus"></i>
-            <h5>Create an Account</h5>
-            <p>Register as a buyer, seller or both using one account.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <i class="bi bi-search"></i>
-            <h5>Explore or List</h5>
-            <p>Explore marketplace listings or submit your own service for approval.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <i class="bi bi-handshake"></i>
-            <h5>Connect and Deal</h5>
-            <p>Contact sellers directly or use the website deal process when available.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Deal Information -->
-  <section class="section-padding light-section" id="dealInformation">
-    <div class="container">
-      <div class="section-heading">
-        <span>FLEXIBLE DEALS</span>
-        <h2>Choose Your Deal Method</h2>
-        <p>Sellers can offer different ways for buyers to complete a deal.</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="deal-card">
-            <i class="bi bi-whatsapp"></i>
-            <h4>Direct Deal</h4>
-            <p>
-              Buyer contacts the seller directly and negotiates outside
-              the platform. No marketplace commission by default.
-            </p>
-            <small>Important: Direct deals are handled between buyer and seller.
-              The platform does not control outside payments or guarantee them.</small>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="deal-card">
-            <i class="bi bi-cart-check"></i>
-            <h4>Website Deal</h4>
-            <p>
-              Buyers can place structured orders through the website when
-              ordering and payment features are enabled.
-            </p>
-            <small>Online payments, commissions and settlements require an
-              integrated payment provider and verified backend setup.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Seller Call To Action -->
-  <section class="seller-cta">
-    <div class="container text-center">
-      <i class="bi bi-shop-window"></i>
-      <h2>Start Selling on Digital Marketplace</h2>
-      <p>Create your profile, showcase your services and connect with buyers.</p>
-      <a href="#signupSection" class="btn btn-light btn-lg">Become a Seller</a>
-    </div>
-  </section>
-
-  <!-- Signup and Login -->
-  <section class="section-padding" id="accountSection">
-    <div class="container">
-      <div class="section-heading">
-        <span>JOIN OUR PLATFORM</span>
-        <h2>Your Marketplace Account</h2>
-        <p>Create an account or log in to continue.</p>
-      </div>
-
-      <div class="row g-4 justify-content-center">
-
-        <!-- Signup -->
-        <div class="col-lg-6" id="signupSection">
-          <div class="account-card">
-            <h3>Create Account</h3>
-            <p>Join as a buyer, seller or both.</p>
-
-            <form id="signupForm">
-              <div class="mb-3">
-                <label for="signupName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="signupName"
-                  placeholder="Enter your full name" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="signupPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="signupPhone"
-                  placeholder="03XXXXXXXXX" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="signupEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="signupEmail"
-                  placeholder="Enter your email" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="signupPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signupPassword"
-                  placeholder="Create a password" minlength="6" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="accountType" class="form-label">Account Type</label>
-                <select class="form-select" id="accountType" required>
-                  <option value="both">Buyer & Seller</option>
-                  <option value="buyer">Buyer Only</option>
-                  <option value="seller">Seller Only</option>
-                </select>
-              </div>
-
-              <button type="submit" class="btn btn-primary w-100">
-                Create My Account
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- Login -->
-        <div class="col-lg-6" id="loginSection">
-          <div class="account-card">
-            <h3>Welcome Back</h3>
-            <p>Log in to your existing account.</p>
-
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="loginEmail"
-                  placeholder="Enter your email" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword"
-                  placeholder="Enter your password" required>
-              </div>
-
-              <button type="submit" class="btn btn-outline-primary w-100">
-                Login
-              </button>
-            </form>
-
-            <div id="currentUserPanel" class="mt-3 d-none">
-              <p id="currentUserText"></p>
-              <button type="button" class="btn btn-outline-danger btn-sm"
-                id="logoutButton">Logout</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="authMessage" class="alert mt-4 d-none" role="alert"></div>
-    </div>
-  </section>
-
-  <!-- Platform Guidelines -->
-  <section class="section-padding light-section" id="guidelines">
-    <div class="container">
-      <div class="section-heading">
-        <span>IMPORTANT INFORMATION</span>
-        <h2>Marketplace Guidelines</h2>
-        <p>Guidelines for a better buying and selling experience.</p>
-      </div>
-
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="guideline-card">
-            <i class="bi bi-shield-check"></i>
-            <div>
-              <h5>Approved Listings</h5>
-              <p>Listings must be reviewed and approved by the admin before public display.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="guideline-card">
-            <i class="bi bi-person-check"></i>
-            <div>
-              <h5>Accurate Information</h5>
-              <p>Sellers should provide honest descriptions, prices and service details.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="guideline-card">
-            <i class="bi bi-chat-dots"></i>
-            <div>
-              <h5>Respectful Communication</h5>
-              <p>Buyers and sellers should communicate respectfully and professionally.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="guideline-card">
-            <i class="bi bi-exclamation-triangle"></i>
-            <div>
-              <h5>Report Suspicious Activity</h5>
-              <p>Report misleading listings, prohibited products or suspicious accounts.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section-padding" id="faq">
-    <div class="container">
-      <div class="section-heading">
-        <span>HELP CENTER</span>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="accordion" id="faqAccordion">
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button"
-              data-bs-toggle="collapse" data-bs-target="#faqOne"
-              aria-expanded="true" aria-controls="faqOne">
-              Is seller registration free?
-            </button>
-          </h2>
-          <div id="faqOne" class="accordion-collapse collapse show"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Seller registration is intended to be free. Any optional paid
-              features or commissions must be clearly explained before use.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#faqTwo"
-              aria-expanded="false" aria-controls="faqTwo">
-              Can I be both a buyer and a seller?
-            </button>
-          </h2>
-          <div id="faqTwo" class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Yes. The planned account system supports buyer and seller roles
-              under one account.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#faqThree"
-              aria-expanded="false" aria-controls="faqThree">
-              Can I sell physical products?
-            </button>
-          </h2>
-          <div id="faqThree" class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              General products and electronics can be enabled by the admin
-              when the platform is ready for those categories.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#faqFour"
-              aria-expanded="false" aria-controls="faqFour">
-              Are online payments available?
-            </button>
-          </h2>
-          <div id="faqFour" class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Payment processing is not enabled by this HTML page alone.
-              It requires a supported payment provider and secure backend integration.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="main-footer">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <h4><i class="bi bi-grid-1x2-fill"></i> Digital Marketplace</h4>
-          <p>
-            A marketplace concept for digital services, WhatsApp channels,
-            promotions, digital products and more.
-          </p>
-        </div>
-
-        <div class="col-6 col-lg-2">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#listings">Marketplace</a></li>
-            <li><a href="#sellers">Sellers</a></li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-lg-3">
-          <h5>Account</h5>
-          <ul>
-            <li><a href="#signupSection">Create Account</a></li>
-            <li><a href="#loginSection">Login</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#faq">FAQs</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3">
-          <h5>Marketplace</h5>
-          <ul>
-            <li><a href="#whatsappMarketplace">WhatsApp Channels</a></li>
-            <li><a href="#listings">Digital Services</a></li>
-            <li><a href="#listings">Digital Products</a></li>
-            <li><a href="#guidelines">Guidelines</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="mb-0">
-          &copy; <span id="currentYear"></span> Digital Marketplace.
-          All rights reserved.
+        <p>
+          Discover digital products, social media assets and services
+          from sellers in one marketplace.
         </p>
-        <p class="mb-0">Built for buyers and sellers in Pakistan.</p>
+
+        <form class="hero-search" id="searchForm">
+          <label class="search-field">
+            <i class="bi bi-search"></i>
+            <input id="searchInput" type="search"
+              placeholder="What are you looking for today?">
+          </label>
+
+          <select id="locationSelect" aria-label="Location">
+            <option value="">All Pakistan</option>
+            <option>Multan</option>
+            <option>Lahore</option>
+            <option>Karachi</option>
+            <option>Islamabad</option>
+            <option>Rawalpindi</option>
+            <option>Faisalabad</option>
+            <option>Other</option>
+          </select>
+
+          <button type="submit">Search <i class="bi bi-arrow-right"></i></button>
+        </form>
+
+        <div class="popular-searches">
+          <span>Popular:</span>
+          <button data-search="WhatsApp">WhatsApp</button>
+          <button data-search="YouTube">YouTube</button>
+          <button data-search="Video Editing">Video Editing</button>
+          <button data-search="Gaming">Gaming</button>
+        </div>
       </div>
+
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-main-icon">
+          <i class="bi bi-cart3"></i>
+          <span class="hero-icon-dot"></span>
+        </div>
+        <div class="floating-label label-top">
+          <i class="bi bi-play-btn-fill"></i>
+          <span><b>YouTube</b><small>Channels & services</small></span>
+        </div>
+        <div class="floating-label label-bottom">
+          <i class="bi bi-whatsapp"></i>
+          <span><b>WhatsApp</b><small>Channels & promotion</small></span>
+        </div>
+        <div class="floating-label label-right">
+          <i class="bi bi-controller"></i>
+          <span><b>Gaming</b><small>IDs & top-ups</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><i class="bi bi-shield-check"></i><span><b>Admin approval</b><small>Listings reviewed before publishing</small></span></div>
+      <div><i class="bi bi-chat-dots"></i><span><b>Private chat</b><small>Connect with sellers on-site</small></span></div>
+      <div><i class="bi bi-tags"></i><span><b>Free listings</b><small>Post your digital ad for free</small></span></div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">BROWSE YOUR INTEREST</span>
+          <h2>Explore categories</h2>
+          <p>Find the digital products and services you need.</p>
+        </div>
+        <button class="text-link" id="showAllCategories">All categories <i class="bi bi-arrow-right"></i></button>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section latest-section" id="latest">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">FRESH FROM OUR MARKETPLACE</span>
+          <h2>Latest advertisements</h2>
+          <p>Explore recently added digital listings.</p>
+        </div>
+        <button class="text-link" id="latestViewAll">View all <i class="bi bi-arrow-right"></i></button>
+      </div>
+      <div class="product-grid" id="latestProducts"></div>
+    </section>
+
+    <section class="section category-sections" id="popular">
+      <!-- Category listing sections are generated by JavaScript -->
+    </section>
+
+    <section class="category-results section" id="categoryResults" hidden>
+      <div class="breadcrumb">
+        <a href="#" id="breadcrumbHome">Home</a>
+        <i class="bi bi-chevron-right"></i>
+        <span id="breadcrumbCategory">Category</span>
+      </div>
+
+      <div class="results-heading">
+        <div>
+          <span class="section-kicker">MARKETPLACE COLLECTION</span>
+          <h2 id="categoryPageTitle">Category Listings</h2>
+          <p id="categoryPageSubtitle">Browse available listings.</p>
+        </div>
+        <button class="outline-btn" id="backHomeBtn"><i class="bi bi-arrow-left"></i> Back home</button>
+      </div>
+
+      <div class="category-filter-row">
+        <select id="subcategoryFilter">
+          <option value="">All subcategories</option>
+        </select>
+        <select id="conditionFilter">
+          <option value="">All listing types</option>
+          <option value="New">New</option>
+          <option value="Used">Used</option>
+          <option value="Service">Service</option>
+        </select>
+        <select id="categorySort">
+          <option value="newest">Newest first</option>
+          <option value="low">Price: Low to high</option>
+          <option value="high">Price: High to low</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="categoryProductGrid"></div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading centered">
+        <span class="section-kicker">SIMPLE & STRAIGHTFORWARD</span>
+        <h2>How it works</h2>
+        <p>Buy and sell digital products in a few simple steps.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <span>01</span>
+          <i class="bi bi-search"></i>
+          <h3>Explore listings</h3>
+          <p>Search categories and find the digital product or service you need.</p>
+        </article>
+        <article class="step-card">
+          <span>02</span>
+          <i class="bi bi-chat-square-text"></i>
+          <h3>Connect with seller</h3>
+          <p>Ask questions and discuss the product through private chat.</p>
+        </article>
+        <article class="step-card">
+          <span>03</span>
+          <i class="bi bi-check2-circle"></i>
+          <h3>Complete your deal</h3>
+          <p>Choose a direct deal or use the website order process.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sell-banner">
+      <div>
+        <span class="section-kicker">GROW WITH US</span>
+        <h2>Have something digital to sell?</h2>
+        <p>Reach interested buyers. Create your listing for free.</p>
+      </div>
+      <button class="primary-btn" id="bannerSellBtn"><i class="bi bi-plus-lg"></i> Post an Ad</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="brand">
+          <span class="brand-mark"><i class="bi bi-cart3"></i></span>
+          <span><strong>DIGITAL <b>MARKETPLACE</b></strong><small>BUY · SELL · PROMOTE · CONNECT</small></span>
+        </a>
+        <p>Your digital world, all in one place.</p>
+      </div>
+
+      <div>
+        <h4>Marketplace</h4>
+        <a href="#categories">Categories</a>
+        <a href="#latest">Explore Ads</a>
+        <a href="#how-it-works">How it works</a>
+      </div>
+
+      <div>
+        <h4>Account</h4>
+        <a href="#" id="footerLogin">Login</a>
+        <a href="#" id="footerSell">Post an Ad</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> Digital Marketplace. All rights reserved.</span>
+      <span>Buy · Sell · Promote · Connect</span>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="backToTop" type="button" aria-label="Back to top">
-    <i class="bi bi-arrow-up"></i>
-  </button>
+  <nav class="mobile-bottom-nav">
+    <a href="#home"><i class="bi bi-house"></i><span>Home</span></a>
+    <a href="#categories"><i class="bi bi-grid"></i><span>Categories</span></a>
+    <button id="mobileSellBtn"><i class="bi bi-plus-circle-fill"></i><span>Post Ad</span></button>
+    <button id="mobileChatsBtn"><i class="bi bi-chat-dots"></i><span>Chats</span></button>
+    <button id="mobileLoginBtn"><i class="bi bi-person"></i><span>Profile</span></button>
+  </nav>
 
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
 
-  <!-- Supabase JavaScript Library -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <div class="whatsapp-popup" id="whatsappPopup" hidden>
+    <button class="popup-close" id="popupClose"><i class="bi bi-x-lg"></i></button>
+    <div class="popup-icon"><i class="bi bi-whatsapp"></i></div>
+    <div>
+      <b>Stay connected with us!</b>
+      <p>Follow our WhatsApp channel for updates.</p>
+      <a href="https://whatsapp.com/channel/0029VakUOHMEVccRjli02O0R" target="_blank" rel="noopener">Follow channel <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+  </div>
 
-  <!-- Main JavaScript -->
+  <div class="toast" id="toast"></div>
+
   <script src="marketplace.js"></script>
-
 </body>
 </html>
