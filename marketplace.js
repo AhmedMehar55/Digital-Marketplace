@@ -1204,3 +1204,44 @@ function initializeMarketplace() {
 }
 
 document.addEventListener("DOMContentLoaded",initializeMarketplace);
+// WhatsApp Button Drag Function
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".whatsapp-popup");
+
+    if (!btn) return;
+
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    btn.addEventListener("pointerdown", (e) => {
+        const rect = btn.getBoundingClientRect();
+
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        btn.style.left = rect.left + "px";
+        btn.style.top = rect.top + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+
+        dragging = true;
+        btn.setPointerCapture(e.pointerId);
+        e.preventDefault();
+    });
+
+    btn.addEventListener("pointermove", (e) => {
+        if (!dragging) return;
+
+        btn.style.left = (e.clientX - offsetX) + "px";
+        btn.style.top = (e.clientY - offsetY) + "px";
+    });
+
+    btn.addEventListener("pointerup", () => {
+        dragging = false;
+    });
+
+    btn.addEventListener("pointercancel", () => {
+        dragging = false;
+    });
+});
